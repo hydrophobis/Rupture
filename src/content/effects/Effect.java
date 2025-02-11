@@ -1,9 +1,15 @@
 package content.effects;
 
-public class Effect {
-    public String name;
+import content.entities.Entity;
 
-    public Effect(String name){
+public abstract class Effect {
+    public String name;
+    public int turns;
+
+    public Effect(String name, int turns){
         this.name = name;
+        this.turns = turns;
     }
+
+    public abstract void deal(Entity entity);
 }

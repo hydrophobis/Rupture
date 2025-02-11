@@ -1,6 +1,8 @@
 package content.items;
+import content.AnsiColors;
+import content.entities.Entity;
 
-public class Item {
+public abstract class Item {
     public String name;
     public String lore;
 
@@ -8,4 +10,10 @@ public class Item {
         this.name = name;
         this.lore = lore;
     }
+
+    public String toString(){
+        return "[" + AnsiColors.GREEN + this.name + AnsiColors.RESET + " | " + AnsiColors.CYAN + this.lore + AnsiColors.RESET + "]";
+    }
+
+    public abstract void consume(Entity entity);
 }
