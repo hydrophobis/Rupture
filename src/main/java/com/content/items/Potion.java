@@ -1,10 +1,10 @@
-package main.java.com.content.items;
+package com.content.items;
 
 import java.util.List;
 
-import main.java.com.core.Pair;
-import main.java.com.content.effects.Effect;
-import main.java.com.content.entities.Entity;
+import com.core.Pair;
+import com.content.effects.Effect;
+import com.content.entities.Entity;
 
 public class Potion extends Item{
     List<Pair<Effect, Boolean>> effectPool;

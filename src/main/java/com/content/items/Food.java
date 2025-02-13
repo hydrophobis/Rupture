@@ -1,6 +1,6 @@
-package main.java.com.content.items;
+package com.content.items;
 
-import main.java.com.content.entities.Entity;
+import com.content.entities.Entity;
 
 public class Food extends Item{
     public int healAmount;

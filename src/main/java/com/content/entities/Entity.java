@@ -1,15 +1,16 @@
-package main.java.com.content.entities;
+package com.content.entities;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
-import main.java.com.core.AnsiColors;
-import main.java.com.core.Pair;
-import main.java.com.content.Items;
-import main.java.com.content.effects.DpsEffect;
-import main.java.com.content.effects.Effect;
-import main.java.com.content.items.Amulet;
-import main.java.com.content.items.Item;
-import main.java.com.content.items.Weapon;
+import com.core.AnsiColors;
+import com.core.Pair;
+import com.content.Items;
+import com.content.effects.DpsEffect;
+import com.content.effects.Effect;
+import com.content.items.Amulet;
+import com.content.items.Item;
+import com.content.items.Weapon;
 
 public class Entity {
     public int health = 0;
@@ -18,11 +19,13 @@ public class Entity {
     public List<Effect> immunities = new ArrayList<>();
     public int maxHealth = 0;
     public int damage = 0;
+    public double dexterity;
     public static final int baseHealth = 0;
     public static final int baseDamage = 0;
     public List<Item> inventory =  new ArrayList<>();
     public List<Amulet> amulets = new ArrayList<>(3);
     public Weapon weapon = (Weapon) Items.basicSword;
+    public boolean passive = false;
  
     public  void update(){
         for(Effect effect : effects){
@@ -31,6 +34,11 @@ public class Entity {
                 this.effects.remove(effect);
             }
         }
+        uniqueInvItems();
+    }
+
+    public void uniqueInvItems(){
+        this.inventory = this.inventory.stream().distinct().collect(Collectors.toList());
     }
 
     public Entity(String name, int damage, int maxHealth){
@@ -60,7 +68,10 @@ public class Entity {
         Map<Effect, Integer> effectCounts = new HashMap<>();
 
         for (Effect e : effects) {
-            effectCounts.put(e, effectCounts.getOrDefault(e, 0) + 1);
+            if(e != null){
+                effectCounts.put(e, effectCounts.getOrDefault(e, 0) + 1);
+            }
+            
         }
         List<Pair<Effect, Integer>> list = new ArrayList<>();
         for (Map.Entry<Effect, Integer> entry : effectCounts.entrySet()) {
@@ -74,7 +85,8 @@ public class Entity {
                 "\nHealth: " + AnsiColors.MAGENTA + health + AnsiColors.RESET + "/" + AnsiColors.MAGENTA + maxHealth + AnsiColors.RESET +
                 "\nDamage: " + AnsiColors.RED + baseDamage + damage + AnsiColors.RESET + " (" + this.weapon.name + ")" +
                 "\nAmulets: " + this.amulets +
-                "\nEffects: " +  strings +
+                "\nEffects: " + strings +
+                "\nWeapon: " + this.weapon + 
                 "\nInventory: " + this.inventory;
     }
 }

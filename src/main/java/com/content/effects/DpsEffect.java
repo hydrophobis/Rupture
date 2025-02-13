@@ -1,6 +1,6 @@
-package main.java.com.content.effects;
+package com.content.effects;
 
-import main.java.com.content.entities.Entity;
+import com.content.entities.Entity;
 
 public class DpsEffect extends Effect{
     public int dps;

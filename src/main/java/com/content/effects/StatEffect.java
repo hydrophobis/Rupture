@@ -1,8 +1,8 @@
-package main.java.com.content.effects;
+package com.content.effects;
 
 import java.lang.reflect.Field;
 
-import main.java.com.content.entities.Entity;
+import com.content.entities.Entity;
 
 public class StatEffect extends Effect {
 

@@ -1,11 +1,11 @@
-package main.java.com.content.effects;
+package com.content.effects;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import main.java.com.core.AnsiColors;
-import main.java.com.core.Pair;
-import main.java.com.content.entities.Entity;
+import com.core.AnsiColors;
+import com.core.Pair;
+import com.content.entities.Entity;
 
 public abstract class Effect {
     public String name;

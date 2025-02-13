@@ -1,6 +1,6 @@
-package main.java.com.content.items;
-import main.java.com.core.AnsiColors;
-import main.java.com.content.entities.Entity;
+package com.content.items;
+import com.core.AnsiColors;
+import com.content.entities.Entity;
 
 public abstract class Item {
     public String name;

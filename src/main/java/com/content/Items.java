@@ -1,10 +1,10 @@
-package main.java.com.content;
+package com.content;
 import java.util.ArrayList;
 
-import main.java.com.content.*;
-import main.java.com.content.effects.Effect;
-import main.java.com.content.entities.Entity;
-import main.java.com.content.items.*;
+import com.content.*;
+import com.content.effects.Effect;
+import com.content.entities.Entity;
+import com.content.items.*;
 
 public class Items {
     public static Item 

@@ -1,16 +1,12 @@
-package main.java.com.content.entities;
+package com.content.entities;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.stream.Collectors;
 
-import main.java.com.content.*;
-import main.java.com.content.effects.Effect;
-import main.java.com.content.items.*;
+import com.core.Menu;
 
 public class Player extends Entity {
     public static final int baseHealth = 10;
     public static final int baseDamage = 1;
-    Item armor;
     
 
     public void update(){
@@ -22,6 +18,7 @@ public class Player extends Entity {
         for(int i = 0; i < this.amulets.size(); i++){
             this.amulets.get(i).consume(this);
         }
+        uniqueInvItems();
     }
 
     public Player(String name, int maxHealth){

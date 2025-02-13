@@ -1,14 +1,14 @@
-package main.java.com.content;
-import main.java.com.core.AnsiColors;
-import main.java.com.content.effects.*;
-import main.java.com.content.entities.Entity;
+package com.content;
+import com.core.AnsiColors;
+import com.content.effects.*;
+import com.content.entities.Entity;
 
 public class Effects {
     public static Effect 
     
     rupture, poison, bleed,
     
-    strength,
+    strength, healthBoost,
     
     regeneration, healthGain;
 
@@ -23,9 +23,10 @@ public class Effects {
         bleed = new DpsEffect("Bleed", 10, AnsiColors.RED, 1);
 
 
-        strength = new StatEffect("Strength", 5, "damage", AnsiColors.YELLOW,3);
+        strength = new StatEffect("Strength", 5, AnsiColors.YELLOW, "damage",3);
+        healthBoost = new StatEffect("Health Boost", 50, AnsiColors.BRIGHT_MAGENTA, "maxHealth", 15);
         
         regeneration = new DpsEffect("Regeneration", 5, AnsiColors.MAGENTA, 2);
-        healthGain = new DpsEffect("Health Gain", 1, AnsiColors.BRIGHT_MAGENTA, 10);
+        healthGain = new DpsEffect("Health Gain", 1, AnsiColors.MAGENTA, 10);
     }
 }

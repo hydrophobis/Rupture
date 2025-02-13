@@ -1,9 +1,9 @@
-package main.java.com.content.items;
+package com.content.items;
 
-import main.java.com.core.Pair;
-import main.java.com.content.*;
-import main.java.com.content.effects.*;
-import main.java.com.content.entities.Entity;
+import com.core.Pair;
+import com.content.*;
+import com.content.effects.*;
+import com.content.entities.Entity;
 
 import java.util.ArrayList;
 import java.util.List;
