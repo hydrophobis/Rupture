@@ -1,5 +1,9 @@
+import content.Effects;
+
 public class Main {
     public static void main(String[] args) {
-        
+        System.out.println(Effects.bleed);
+
+
     }
 }

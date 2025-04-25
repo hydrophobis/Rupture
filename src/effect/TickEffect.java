@@ -1,8 +1,13 @@
 package effect;
 
-public class TickEffect extends Effect {
+import attribute.*;
+
+import entity.LivingEntity;
+
+public class TickEffect<T> extends Effect {
+    public Attribute<T> tick_attribute;
     
-    public void tick(){
+    public void tick(LivingEntity entity){
         System.out.println("Un-overridden TickEffect.tick() function called");
     }
 

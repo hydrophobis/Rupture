@@ -1,8 +1,10 @@
-package entity;
+package content;
 
 import attribute.Attribute;
+import entity.Entity;
+import entity.Player;
 
-public class Entities {
+public class Entities extends ContentLoader {
     public static Entity 
     player,
     
@@ -11,11 +13,6 @@ public class Entities {
     public static void load(){
         player = new Player("player"){{
             health = Attribute.intAttribute(100);
-            damage = Attribute.intAttribute(5);
-        }};
-
-        goblin = new Enemy("goblin"){{
-            health = Attribute.intAttribute(15);
             damage = Attribute.intAttribute(5);
         }};
     }
