@@ -1,30 +1,45 @@
 package attribute;
 
 public class Attribute<T> {
-    public String name;
-    public T value;
-    public T base;
+    private T value;
+    private final T base;
 
-    public void set(T value){
-        set(name, value);
-    }
-
-    public void set(String name, T value){
-        this.name = name;
-        this.value = value;
-    }
-
-    public Attribute(T value){
+    public Attribute(T value) {
         this.value = value;
         this.base = value;
     }
 
-    public Attribute(T value, T base){
-        this.value = value;
-        this.base = base;
+    public T get() {
+        return value;
     }
 
-    public static Attribute<Integer> intAttribute(int val){
-        return new Attribute<Integer>(val);
+    public void set(T value) {
+        this.value = value;
+    }
+
+    public T getBase() {
+        return base;
+    }
+
+    @Override
+    public String toString() {
+        return value.toString();
+    }
+
+    // Factory methods
+    public static Attribute<Double> health(double d) {
+        return new Attribute<>(d);
+    }
+
+    public static Attribute<Double> damage(double d) {
+        return new Attribute<>(d);
+    }
+
+    public static Attribute<Integer> turns(int i) {
+        return new Attribute<>(i);
+    }
+
+    public static <T> Attribute<T> create(String name, T val) {
+        return new Attribute<>(val);
     }
 }

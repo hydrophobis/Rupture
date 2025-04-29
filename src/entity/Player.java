@@ -1,16 +1,21 @@
 package entity;
 
-import attribute.Attribute;
+import java.util.*;
+import java.util.Map;
+
+import attribute.*;
+import item.*;
 
 public class Player extends LivingEntity {
 
-    public Attribute<Integer> damage;
+    public Weapon weapon;
 
-    public Player(String name){
+    public Player(String name) {
         super(name);
     }
 
-    public String toString(){
-        return String.format("[%S❤][%S⚔]\n", health, damage);
+    
+    public String toString() {
+        return String.format("[HP: %s ⚔: %s]", getValue("health"), getValue("damage"));
     }
 }

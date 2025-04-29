@@ -6,7 +6,7 @@ public class Weapon extends Item {
     public int damage;
 
     public void use(LivingEntity entity){
-        entity.health.value -= damage;
+        entity.setHealth(entity.getHealth() - damage);
     }
 
     public Weapon(String name){
