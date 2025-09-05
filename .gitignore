@@ -1,0 +1,7 @@
+*.class
+
+mod-test
+script-test
+out
+build
+./assets/*

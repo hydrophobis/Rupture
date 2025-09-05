@@ -1,0 +1,27 @@
+#!/bin/bash
+set -e  # Exit on error
+
+# Clean old build
+rm -rf out build
+mkdir -p out build
+
+# Compile all Java files
+javac --release 11 -d out $(find src -name "*.java")
+
+# Create a proper manifest file
+cat > manifest.mf <<EOF
+Manifest-Version: 1.0
+Main-Class: rupture.Main
+
+EOF
+
+# Build the JAR with the manifest
+jar cfm build/rupture.jar manifest.mf -C out .
+
+# Clean up temporary manifest
+rm manifest.mf
+
+echo "✅ Build successful: build/rupture.jar"
+
+# Run the JAR
+java -jar build/rupture.jar
